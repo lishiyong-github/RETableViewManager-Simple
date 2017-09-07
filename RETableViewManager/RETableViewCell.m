@@ -27,7 +27,6 @@
 #import "RETableViewManager.h"
 #import "RETableViewSection.h"
 #import "RETableViewItem.h"
-#import "UITableView+FDTemplateLayoutCell.h"
 
 
 @interface RETableViewCell ()
@@ -47,18 +46,6 @@
 
 + (CGFloat)heightWithItem:(RETableViewItem *)item tableViewManager:(RETableViewManager *)tableViewManager
 {
-    //当cellHeight 为 UITableViewAutomaticDimension时，利用约束计算cell高度
-    if (item.cellHeight == UITableViewAutomaticDimension) {
-        CGFloat height = [tableViewManager.tableView fd_heightForCellWithIdentifier:item.cellIdentifier cacheByIndexPath:item.indexPath configuration:^(RETableViewCell *cell) {
-            cell.item = item;
-            [cell cellWillAppear];
-        }];
-        if (height < 0.0) {
-            height = 0.0;
-        }
-        return height;
-    }
-    
     if ([item isKindOfClass:[RETableViewItem class]] && item.cellHeight > 0)
         return item.cellHeight;
     
