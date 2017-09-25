@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 s.name = "RETableViewManager-Simple"
 
-s.version = "1.0.0"
+s.version = "1.0.1"
 
 s.summary = "A Library for iOS RETableViewManager-Simple."
 
@@ -14,7 +14,7 @@ s.author = { "lishiyong-github" => "1525846137@qq.com" }
 
 s.source = { :git => "https://github.com/lishiyong-github/RETableViewManager-Simple.git", :tag => s.version }
 
-s.source_files = "RETableViewManager/*.{h,m}"
+s.source_files = "RETableViewManager-Simple/*.{h,m}"
 
 s.framework = 'UIKit'
 
