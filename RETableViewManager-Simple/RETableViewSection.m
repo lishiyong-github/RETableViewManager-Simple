@@ -74,6 +74,10 @@ CGFloat const RETableViewSectionFooterHeightAutomatic = DBL_MAX;
     _mutableItems = [[NSMutableArray alloc] init];
     _headerHeight = RETableViewSectionHeaderHeightAutomatic;
     _footerHeight = RETableViewSectionFooterHeightAutomatic;
+    if (@available(iOS 11.0, *)) {
+        _headerHeight = 0;
+        _footerHeight = 0;
+    }
     _cellTitlePadding = 5;
     
     return self;
