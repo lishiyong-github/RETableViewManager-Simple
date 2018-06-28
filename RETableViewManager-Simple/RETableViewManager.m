@@ -415,7 +415,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex
 {
     if (self.mutableSections.count <= sectionIndex) {
-        return UITableViewAutomaticDimension;
+        return 0.1;
     }
     RETableViewSection *section = self.mutableSections[sectionIndex];
     
@@ -449,14 +449,13 @@
     //
     if ([self.delegate conformsToProtocol:@protocol(UITableViewDelegate)] && [self.delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)])
         return [self.delegate tableView:tableView heightForHeaderInSection:sectionIndex];
-    
-    return UITableViewAutomaticDimension;
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)sectionIndex
 {
     if (self.mutableSections.count <= sectionIndex) {
-        return UITableViewAutomaticDimension;
+        return 0.1;
     }
     RETableViewSection *section = self.mutableSections[sectionIndex];
     
@@ -491,7 +490,7 @@
     if ([self.delegate conformsToProtocol:@protocol(UITableViewDelegate)] && [self.delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)])
         return [self.delegate tableView:tableView heightForFooterInSection:sectionIndex];
     
-    return UITableViewAutomaticDimension;
+    return 0.1;
 }
 
 // Estimated height support
@@ -499,7 +498,7 @@
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.mutableSections.count <= indexPath.section) {
-        return UITableViewAutomaticDimension;
+        return 0.1;
     }
     RETableViewSection *section = self.mutableSections[indexPath.section];
 
